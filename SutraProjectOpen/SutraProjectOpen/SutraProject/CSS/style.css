@@ -1,0 +1,105 @@
+body {
+    font-family: Tahoma;
+    background-color: #f8f9fa;
+  }
+  
+  h1 {
+    margin-bottom: 30px;
+  }
+  
+  /* form {
+    background: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  } */
+  
+  .btn-group-toggle .btn {
+    flex: 1;
+  }
+  
+  @media (max-width: 768px) {
+    .btn-group-toggle .btn {
+      flex: none;
+      width: 100%;
+      margin-bottom: 5px;
+    }
+  }
+  
+  .footer {
+    background: #f8f9fa;
+    padding: 20px 0;
+  }
+    
+  .footer p {
+    margin: 0;
+  }
+  
+  .footer .an {
+    color: #007bff;
+    text-decoration: none;
+  }
+  
+  .footer .an:hover {
+    text-decoration: underline;
+  }
+
+  .uln { 
+  /* margin: 150px auto 0;  */
+  padding: 0; 
+  list-style: none; 
+  display: table;
+  width: 600px;
+  text-align: center;
+}
+.lin { 
+  display: table-cell; 
+  position: relative; 
+  padding: 15px 0;
+}
+.an {
+  color: #fff;
+  text-transform: uppercase;
+  text-decoration: none;
+  letter-spacing: 0.15em;
+  /* letterspacing disini cuman ngaruh ke sign in button karena yang lain sudah dikasikan inline */
+  display: inline-block;
+  padding: 15px 20px;
+  position: relative;
+}
+
+@media only screen and (max-width: 502px) {
+  .head img {
+    width: 13%;
+    height: 9%;
+  }
+
+  .head {
+    width: 100%;
+  }
+
+  .uln {
+    width: 100%;
+    text-align: center;
+  }
+
+  .lin {
+    display: table-cell;
+    position: relative;
+    padding: 15px;
+  }
+
+  h1 {
+    font-size: 8vw;
+  }
+
+
+
+}
+
+@media screen and (max-height: 300px) {
+	.uln {
+		margin-top: 40px;
+	}
+}
+

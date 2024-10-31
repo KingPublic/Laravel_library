@@ -1,0 +1,25 @@
+SET item TO float(INPUT("Berapa item"))
+
+SET harga TO float(INPUT("Berapa harga item"))
+
+SET total TO float( item*harga)
+
+SET diskon TO 0.1
+
+IF item < 10 and item > 0 :
+
+    OUTPUT ("Kamu tidak mendapat diskon",total)
+
+ELSEIF item < 0 :
+
+    OUTPUT("Invalid")
+
+else :
+
+    SET total1 TO item*harga
+
+    total=total1*diskon
+
+    SET total_bayar TO total1-total
+
+    OUTPUT ("Kamu mendapat diskon",total_bayar)

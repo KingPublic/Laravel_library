@@ -1,0 +1,70 @@
+ body {
+    font-family: Arial, sans-serif;
+    background-image: url("imagecss/desain-perpustakaan-1.jpg");
+    margin: 0px;
+    padding: 20px;
+    background-repeat: no-repeat;
+    max-width: 100%;
+    background-size: cover;
+}
+
+.container {
+    max-width: 600px;
+    margin: auto;
+    background-image:url(imagecss/paper.jpeg);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* h1, h2 {
+    text-align: center;
+} */
+
+label {
+    display: block;
+    margin: 10px 0 5px;
+}
+  
+select {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #d3a88b8c;
+}
+
+input{
+    width: 97%;
+    padding: 8px ;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #d3a88b8c;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: 	#d9bda5;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+    border: solid rgba(0, 0, 0, 0.305);
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #e2af83;
+}
+
+.book-entry {
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+} 
+
+/* .title{
+    color: red;
+} */

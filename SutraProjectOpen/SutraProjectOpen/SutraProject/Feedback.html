@@ -1,0 +1,303 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Feedback</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="CSS/style.css">
+  <!-- <link rel="stylesheet" href="main.css"> -->
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+  <link rel="stylesheet" href="CSS/footer.css">
+
+
+  <style>
+    body {
+      animation: transationIn 0.8s;
+      background: white !important;;
+      width: 100%;  
+    }
+
+    @keyframes transationIn {
+      from {
+        opacity: 0;
+        transform: translateY(-10px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+    /* untuk animation reload */
+
+    .nin {
+      background-color: white !important;
+    }
+
+    @media only screen and (max-width: 992px) {
+      .navbar-nav {
+        position: static !important ;
+        display: flex !important;
+        justify-content: left !important;
+      }
+    }
+
+    @media only screen and (max-width : 435px){
+      .head img{
+        width: 12%;
+        height: 6%;
+      }
+
+    }
+
+    h1 {
+      font-size: 305%;
+      margin: 3%;
+      font-family: Tahoma;
+      font-weight: 650;
+      letter-spacing: 2px;
+    }
+
+    @media only screen and (min-width: 992px) {
+      .navbar-nav {
+        position: absolute !important;
+      }
+    }
+
+
+    .head img {
+      width: 6%;
+      height: 3%;
+    }
+
+    .as {
+      margin-top: 2%;
+    }
+
+    .an:after {
+      background: none repeat scroll 0 0 transparent;
+      bottom: 0;
+      content: "";
+      display: block;
+      height: 2px;
+      left: 50%;
+      position: absolute;
+      background: rgba(0, 0, 0, 0.880);
+      transition: width 0.3s ease 0s, left 0.3s ease 0s;
+      width: 0;
+      
+    }
+
+    .an:hover:after {
+      width: 85%;
+      left: 0;
+      margin-left: 7px;
+    }
+
+    .imgku {
+      height: 100%;
+
+      object-fit: cover;
+    }
+
+    .img2 {
+      object-fit: cover;
+    }
+
+    
+    .tesres{
+      
+      padding: 11px;
+      
+    }
+
+    .teshov:hover{
+      /* background-color: rgba(0, 0, 0, 0.475); */
+      transform: translateY(-5px) scale(1.005) translateZ(0);
+      box-shadow: 0 24px 36px rgba(0, 0, 0, 0.505),
+      0 24px 46px var(--box-shadow-color);
+      background-color: #ffffff62 !important;
+    }
+
+   /* Feedback form styles */
+   .feedback-form {
+      max-width: 600px;
+      margin: 30px auto;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      background: #fff;
+    }
+
+    .feedback-form h2 {
+      margin-bottom: 20px;
+    }
+
+    .feedback-form .form-group {
+      margin-bottom: 20px;
+    }
+
+    .feedback-form .form-group label {
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    .feedback-form .form-group input,
+    .feedback-form .form-group textarea {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    .feedback-form .form-group textarea {
+      resize: vertical;
+      height: 150px;
+    }
+
+    .feedback-form .btn {
+      background-color: #000;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+    }
+  </style>
+
+
+</head>
+
+<body>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+    integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous">
+    </script>
+  <script src="JS/Feedback.js"></script>
+  
+
+  <nav class="navbar navbar-expand-lg bg-body-tertiary nin"
+    style="box-shadow: 0 0 10px rgba(32, 30, 30, 0.1); border-bottom: 1px solid rgb(183, 183, 183); ">
+    <div class="container-fluid head" style="margin-left: 2%;">
+      <img src="image/sutra 1.svg" alt="">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent" style="padding-top: 10px;">
+        <ul class="navbar-nav mb-2 uln" style="position: absolute; right: 0.1%;">
+          <li class="nav-item as lin">
+            <a class="nav-link boldlink an" href="Blog.html" style="color: black ; letter-spacing: 2px; " >Blog</a>
+          </li>
+          <li class="nav-item as lin">
+            <a class="nav-link boldlink an" href="Trip.html" style="color: black ;letter-spacing: 2px;">Plan</a>
+          </li>
+          <li class="nav-item as lin">
+            <a class="nav-link boldlink an" href="#" style="color: black ;letter-spacing: 2px;">Your Trip</a>
+          </li>
+          <li class="nav-item as lin">
+            <a class="nav-link boldlink an" href="Feedback.html" style="color: black ;letter-spacing: 2px;font-weight: bolder;">Feedback</a>
+          </li>
+          <li class="lin">
+            <div style="padding-top: 1px; margin-left: 10px;">
+              <button class="" id="loginBtn" style="background-color: black; color: white;" type="sign"><a class="tesres an"
+                  style="text-decoration: none; color: white;" rel="stylesheet" href="Login.html">Sign Up</a></button>
+            </div>
+      </div>
+      </li>
+      </ul>
+    </div>
+    </div>
+  </nav>
+
+  
+  <!-- Feedback Form -->
+  <div class="feedback-form">
+    <h2>Beritahu saran dan masukkan anda</h2>
+    <form id="feedbackForm">
+      <div class="form-group">
+        <label for="email">E-mail</label>
+        <input type="email" id="email" name="email" required>
+      </div>
+      <div class="form-group">
+        <label for="message">Pesan</label>
+        <textarea id="message" name="message" required></textarea>
+      </div>
+      <button type="submit" class="btn">Submit</button>
+    </form>
+  </div>
+ 
+
+  <footer class="site-footer" style="margin-top: 35px;">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12 col-md-6">
+          <h6>About</h6>
+          <p class="text-justify">Sutra.com <i>adalah website dengan program AI </i> yang dimana dapat membantu para wisatawan internasional maupun lokal untuk mendapatkan informasi terkait lokasi, perkiraan biaya, dan deskripsi singkat pada tempat tersebut. Dimana Pengguna hanya perlu memilih kategori perencanaan, dan dari kategori tersebut akan di program melalui AI untuk perencanaannya</p>
+        </div>
+  
+        <div class="col-xs-6 col-md-3">
+          <h6>Menu Link</h6>
+          <ul class="footer-links">
+            <li><a class="af"href="">Blog</a></li>
+            <li><a class="af"href="">Plan</a></li>
+            <li><a class="af"href="">Your Trip</a></li>
+            <li><a class="af"href="">Feedback</a></li>
+          </ul>
+        </div>
+  
+        <div class="col-xs-6 col-md-3">
+          <h6>Progress</h6>
+          <ul class="footer-links">
+            <li class="lif"><a class="af"href="">Figma</a></li>
+            <li class="lif"><a class="af"href="">Miro</a></li>
+            <li class="lif"><a class="af"href="">Road Map</a></li>
+          </ul>
+        </div>
+      </div>
+      <hr>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8 col-sm-6 col-xs-12">
+          <p class="copyright-text">Copyright &copy; 2024 All Rights Reserved by 
+       <a href="#">Sutra</a>.
+          </p>
+        </div>
+  
+        <div class="col-md-4 col-sm-6 col-xs-12">
+          <ul class="social-icons">
+            <li class="lif"><img src="image/basil_facebook-outline.svg" alt=""></li>
+            <li class="lif"><img src="image/flowbite_instagram-solid.svg" alt=""></li>
+            <li class="lif"><img src="image/prime_twitter.svg" alt=""></li>
+            <li class="lif"><img src="image/ri_linkedin-fill.svg" alt=""></li>   
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+
+
+
+
+
+</body>
+
+</html>

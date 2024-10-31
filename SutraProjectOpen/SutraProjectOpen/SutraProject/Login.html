@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Login</title>
+  <link rel="stylesheet" href="CSS/pop.css">
+  
+  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@500&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="overlay">
+    <section class="forms-section">
+      <h1 class="section-title" style="font-family:'Tahoma'; letter-spacing: 5px;">Hello Friend </h1>
+      <div class="forms">
+        <div class="form-wrapper is-active">
+          <button type="button" class="switcher switcher-login">
+            Login
+            <span class="underline"></span>
+          </button>
+          <form id="login-form" class="form form-login">
+            <fieldset>
+              <legend>Please, enter your email and password for login.</legend>
+              <div class="input-block">
+                <label for="login-email">E-mail</label>
+                <input id="login-email" type="email" required>
+              </div>
+              <div class="input-block">
+                <label for="login-password">Password</label>
+                <input id="login-password" type="password" required>
+              </div>
+            </fieldset>
+            <button type="submit" class="btn btn-login">Login</button>
+          </form>
+        </div>
+        <div class="form-wrapper">
+          <button type="button" class="switcher switcher-signup">
+            Sign Up
+            <span class="underline"></span>
+          </button>
+          <form id="signup-form" class="form form-signup">
+            <fieldset>
+              <legend>Please, enter your email, username, and password for sign up.</legend>
+              <div class="input-block">
+                <label for="signup-email">E-mail</label>
+                <input id="signup-email" type="email" required>
+              </div>
+              <div class="input-block">
+                <label for="signup-username">Username</label>
+                <input id="signup-username" type="text" required>
+              </div>
+              <div class="input-block">
+                <label for="signup-password">Password</label>
+                <input id="signup-password" type="password" required>
+              </div>
+            </fieldset>
+            <button type="submit" class="btn btn-signup">Continue</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script src="JS/pop.js"></script>
+</body>
+</html>

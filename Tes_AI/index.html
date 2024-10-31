@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChatGPT AI Interface</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="chat-container">
+        <h1>What can I help with?</h1>
+        <div class="chat-box">
+            <div id="chat-log"></div>
+            <input type="text" id="user-input" placeholder="Message ChatGPT">
+            <button onclick="sendMessage()">Send</button>
+        </div>
+        <div class="options">
+            <button onclick="createImage()">🖼️ Create image</button>
+            <button onclick="analyzeData()">📊 Analyze data</button>
+            <button onclick="summarizeText()">📝 Summarize text</button>
+            <button onclick="helpMeWrite()">✍️ Help me write</button>
+            <button onclick="moreOptions()">More</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

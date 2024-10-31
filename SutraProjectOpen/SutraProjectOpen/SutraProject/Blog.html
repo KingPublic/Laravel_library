@@ -1,0 +1,626 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="CSS/style.css">
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+  <link rel="stylesheet" href="CSS/footer.css">
+
+
+
+  <style>
+    body {
+      animation: transationIn 0.8s;
+      background: white !important;;
+      width: 100%; 
+       
+    }
+
+    @keyframes transationIn {
+      from {
+        opacity: 0;
+        transform: translateY(-10px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgb(0, 0, 0);
+            background-color: rgba(0, 0, 0, 0.4);
+            padding-top: 60px;
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: 5% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+    /* untuk animation reload */
+   
+
+    .nin {
+      background-color: white !important;
+    }
+
+    @media only screen and (max-width: 992px) {
+      .navbar-nav {
+        position: static !important ;
+        display: flex !important;
+        justify-content: left !important;
+      }
+      
+    }
+
+    h1 {
+      font-size: 240%;
+      margin: 3%;
+      font-family: Tahoma;
+      font-weight: 650;
+      letter-spacing: 2px;
+    }
+
+    @media only screen and (min-width: 992px) {
+      .navbar-nav {
+        position: absolute !important;
+      }
+      
+    }
+
+    .head img {
+      width: 6%;
+      height: 3%;
+    }
+
+    @media only screen and (max-width : 435px){
+      .head img{
+        width: 12%;
+        height: 6%;
+      }
+
+    }
+
+    .as {
+      margin-top: 2%;
+    }
+
+    .an:after {
+      background: none repeat scroll 0 0 transparent;
+      bottom: 0;
+      content: "";
+      display: block;
+      height: 2px;
+      left: 50%;
+      position: absolute;
+      background: rgba(0, 0, 0, 0.880);
+      transition: width 0.3s ease 0s, left 0.3s ease 0s;
+      width: 0;
+      
+    }
+
+    .an:hover:after {
+      width: 85%;
+      left: 0;
+      margin-left: 7px;
+    }
+
+   
+
+    .imgku {
+      height: 100%;
+
+      object-fit: cover;
+    }
+
+    .img2 {
+      object-fit: cover;
+    }    
+
+    .carousel-item::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Warna hitam semi-transparan */
+}
+
+.carousel-caption {
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white; /* Pastikan teks berwarna putih agar terlihat di atas gambar */
+    z-index: 1; /* Pastikan teks muncul di atas latar belakang gelap */
+    padding: 10px; /* Optional: tambahkan padding agar teks lebih terlihat */
+    
+}
+
+.carousel-inner {
+    position: relative;
+    width: 100%;
+    height: 70vh; /* Adjust the height as needed */
+}
+
+.carousel-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.boldlink:hover{
+  font-weight: bolder;
+}
+  .tesres{
+    
+    padding: 11px;
+    
+  }
+
+  .teshov:hover{
+    /* background-color: rgba(0, 0, 0, 0.475); */
+    transform: translateY(-5px) scale(1.005) translateZ(0);
+    box-shadow: 0 24px 36px rgba(0, 0, 0, 0.505),
+    0 24px 46px var(--box-shadow-color);
+    background-color: #ffffff62 !important;
+  }
+
+</style>
+
+
+</head>
+
+<body>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+    integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous">
+    </script>
+  
+
+  <nav class="navbar navbar-expand-lg bg-body-tertiary nin"
+    style="box-shadow: 0 0 10px rgba(32, 30, 30, 0.1); border-bottom: 1px solid rgb(183, 183, 183); ">
+    <div class="container-fluid head" style="margin-left: 2%;">
+      <img src="image/sutra 1.svg" alt="">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent" style="padding-top: 10px;">
+        <ul class="navbar-nav mb-2 uln" style="position: absolute; right: 0.1%;">
+          <li class="nav-item as lin">
+            <a class="nav-link boldlink an" href="Blog.html" style="color: black ; letter-spacing: 2px; font-weight: bolder;" >Blog</a>
+          </li>
+          <li class="nav-item as lin">
+            <a class="nav-link boldlink an" href="Trip.html" style="color: black ;letter-spacing: 2px;">Plan</a>
+          </li>
+          <li class="nav-item as lin">
+            <a class="nav-link boldlink an" href="#" style="color: black ;letter-spacing: 2px;">Your Trip</a>
+          </li>
+          <li class="nav-item as lin">
+            <a class="nav-link boldlink an" href="Feedback.html" style="color: black ;letter-spacing: 2px;">Feedback</a>
+          </li>
+          <li class="lin">
+            <div style="padding-top: 1px; margin-left: 10px;">
+              <button class="" id="loginBtn" style="background-color: black; color: white;" type="sign"><a class="tesres an"
+                  style="text-decoration: none; color: white;" rel="stylesheet" href="Login.html">Sign Up</a></button>
+            </div>
+      </div>
+      </li>
+      </ul>
+    </div>
+    </div>
+  </nav>
+
+  <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div>
+    <div class="carousel-inner" style="object-fit: cover; height: 90%;">
+        <div class="carousel-item active">
+            <img src="image/photo-1715601492356-4023b47f6443.avif" class="d-block w-100" alt="..." style="object-fit: cover;">
+            <div class="carousel-caption d-none d-md-block center-caption">
+                <h5 style="font-weight: bold; font-size: 5vh;">Pantai Losari, </h5>
+                <p>Ikon Utama Makassar yang Wajib Dikunjungi</p>
+                <!-- <a href=""class="btn btn-primary ">Pelajari Lebih Lanjut</a> -->
+            </div>
+        </div>
+        <div class="carousel-item">
+            <img src="image/istanadipalopo.jpeg" class="d-block w-100" alt="..." style="object-fit: cover;">
+            <div class="carousel-caption d-none d-md-block center-caption">
+                <h5 style="font-weight: bold; font-size: 5vh;">Istana Datu Luwu, </h5>
+                <p>Menelusuri Sejarah di Palopo</p>
+                <!-- <a href=""class="btn btn-primary ">Pelajari Lebih Lanjut</a> -->
+            </div>
+        </div>
+        <div class="carousel-item">
+            <img src="image/monumendipare.webp" class="d-block w-100" alt="..." style="object-fit: cover;">
+            <div class="carousel-caption d-none d-md-block center-caption">
+                <h5 style="font-weight: bold; font-size: 5vh;">Monumen Cinta Sejati Habibie Ainun, </h5>
+                <p>Destinasi Romantis di Parepare</p>
+                <!-- <a href=""class="btn btn-primary ">Pelajari Lebih Lanjut</a> -->
+            </div>
+        </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+</div>
+
+
+<div>
+  <h1 style="text-align: center;">Destinasi Liburan</h1>
+</div>
+
+<div class="container text-center">
+  <div class="row align-items-center" id="card-container">
+      <!-- Cards will be inserted here dynamically -->
+  </div>
+  <button id="loadMoreBtn" class="btn btn-outline-dark mt-3">Tampilkan Lebih Banyak <img src="" alt=""></button>
+</div>
+
+<!-- The Modal -->
+<div id="myModals" class="modal">
+  <div class="modal-content">
+      <span class="close">&times;</span>
+      <div id="modal-image" style="width: 100%; height: 200px; background-size: cover; background-position: center"></div>
+      <p id="modal-text"></p>
+  </div>
+</div>
+
+  <script>
+    const cards = [
+        {
+            title: 'Pesona Air Terjun Bissappu, Tempat Tak Terlewatkan di Bantaeng',
+            text: 'Makassar, ibu kota Sulawesi Selatan, terletak di pesisir barat daya. Kota ini dikenal dengan keindahan pantai, pulau-pulau eksotis, dan budaya yang kaya. Salah satu daya tarik utama adalah Pantai Losari yang terkenal dengan matahari terbenam yang menakjubkan. Selain itu, Pulau Samalona dan Pulau Kodingareng Keke menawarkan keindahan bawah laut untuk snorkeling dan diving, sementara Benteng Rotterdam dengan arsitektur kolonialnya menyediakan pemandangan sejarah yang mempesona.',
+            imgSrc: 'image/airterjunbantaeng.jpg',
+            lastUpdated: 'Terakhir diperbarui 2 menit lalu',
+            modalImage: 'image/airterjunbantaeng.jpg',
+            modalText: 'Air Terjun Bissappu merupakan salah satu destinasi wisata alam yang tidak boleh terlewatkan di Bantaeng, Sulawesi Selatan. Terletak di kawasan pegunungan yang sejuk, air terjun ini menawarkan pemandangan spektakuler dengan air yang jatuh dari ketinggian dan dikelilingi oleh vegetasi hijau yang rimbun. Suara gemericik air yang menenangkan, udara segar, dan suasana alami yang asri menjadikan tempat ini sebagai surga tersembunyi bagi para pencinta alam dan penggemar fotografi. Selain keindahan alamnya, Air Terjun Bissappu juga memiliki fasilitas yang memadai untuk pengunjung, seperti area parkir, jalur trekking, dan tempat istirahat, sehingga memberikan pengalaman berwisata yang nyaman dan menyenangkan. Keindahan dan pesona Air Terjun Bissappu menjadikannya destinasi yang wajib dikunjungi saat berada di Bantaeng.'
+        },
+        {
+            title: 'Eksplorasi Pantai Ujung Batu, Destinasi Favorit di Barru',
+            text: 'Bulukumba, sebuah wilayah di Sulawesi Selatan, terletak di pesisir tenggara. Daerah ini dikenal dengan pantai-pantai yang indah, perairan jernih, dan budaya maritim yang kaya. Salah satu daya tarik utama adalah Pantai Bira yang terkenal dengan pasir putihnya yang menakjubkan. Selain itu, Tanjung Bira dan Pulau Liukang menawarkan keindahan bawah laut untuk snorkeling dan diving, sementara Phinisi Tana Beru dengan perahu tradisionalnya menyediakan pemandangan budaya yang mempesona.',
+            imgSrc: 'image/barrubatu.jpeg',
+            lastUpdated: 'Terakhir diperbarui 2 menit lalu',
+            modalImage: 'image/barrubatu.jpeg',
+            modalText: 'Pantai Ujung Batu adalah destinasi favorit yang wajib dikunjungi di Barru, Sulawesi Selatan. Dengan pasir putih yang halus dan air laut yang jernih, pantai ini menawarkan pemandangan yang memukau serta suasana yang menenangkan. Garis pantai yang panjang dan landai membuatnya ideal untuk berbagai aktivitas, seperti berjalan-jalan di tepi pantai, berjemur, atau bermain air. Selain keindahan alamnya, Pantai Ujung Batu juga dilengkapi dengan fasilitas yang memadai, seperti warung makan, area parkir, dan tempat istirahat, sehingga pengunjung dapat menikmati waktu mereka dengan nyaman. Keindahan matahari terbenam di pantai ini adalah salah satu momen yang paling dinanti, memberikan pengalaman yang tak terlupakan bagi setiap wisatawan. Dengan semua pesonanya, Pantai Ujung Batu menjadi destinasi yang tidak boleh dilewatkan saat berkunjung ke Barru.'
+        },
+        {
+            title: 'Menikmati Keindahan Tanjung Palette, Spot Utama di Bone',
+            text: 'This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.',
+            imgSrc: 'image/tanjungpalletebone.jpg',
+            lastUpdated: 'Terakhir diperbarui 2 menit lalu',
+            modalImage: 'image/tanjungpalletebone.jpg',
+            modalText: 'Tanjung Palette merupakan salah satu spot utama yang menawarkan keindahan alam yang mempesona di Bone, Sulawesi Selatan. Terkenal dengan panorama laut yang menakjubkan, Tanjung Palette menyuguhkan pemandangan yang memikat hati dengan air laut yang biru jernih dan garis pantai yang indah. Dikelilingi oleh tebing-tebing karang yang megah dan vegetasi hijau yang asri, tempat ini menjadi destinasi ideal bagi para pencinta alam dan fotografer. Selain itu, Tanjung Palette juga merupakan lokasi yang sempurna untuk menikmati matahari terbit dan terbenam, memberikan pengalaman yang magis bagi para pengunjung. Fasilitas yang memadai, seperti area parkir, warung makan, dan tempat istirahat, turut mendukung kenyamanan wisatawan. Menikmati keindahan Tanjung Palette adalah pengalaman yang tidak akan terlupakan, menjadikannya spot utama yang harus dikunjungi saat berada di Bone.'
+        },
+        {
+            title: 'Menjelajahi Pantai Tanjung Bira, Surga Tersembunyi di Bulukumba',
+            text: 'This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.',
+            imgSrc: 'image/birabulukumba.jpg',
+            lastUpdated: 'Terakhir diperbarui 2 menit lalu',
+            modalImage: 'image/testerjpeg.jpeg',
+            modalText: 'This is a description for the fourth card.'
+        },
+        {
+            title: 'Mendaki Gunung Nona, Petualangan Seru di Enrekang',
+            text: 'This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.',
+            imgSrc: 'image/gunungnonaenrekang.jpeg',
+            lastUpdated: 'Terakhir diperbarui 2 menit lalu',
+            modalImage: 'image/testerjpeg.jpeg',
+            modalText: 'This is a description for the second card.'
+        },
+        {
+            title: 'Menjelajahi Keindahan Malino, Destinasi Andalan di Gowa',
+            text: 'This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.',
+            imgSrc: 'image/malinogowa.jpg',
+            lastUpdated: 'Terakhir diperbarui 2 menit lalu',
+            modalImage: 'image/Malinohigh.jpg',
+            modalText: 'This i'
+        },
+        {
+            title: 'Berwisata ke Gunung Lompobattang, Pendakian Menantang di Jeneponto',
+            text: 'This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.',
+            imgSrc: 'image/lompobatangjene.jpg',
+            lastUpdated: 'Terakhir diperbarui 2 menit lalu',
+            modalImage: 'image/Malinohigh.jpg',
+            modalText: 'This i'
+        },
+        {
+            title: 'Menjelajah Taman Nasional Taka Bonerate, di Selayar',
+            text: 'This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.',
+            imgSrc: 'image/takaboneselayar.jpg',
+            lastUpdated: 'Terakhir diperbarui 2 menit lalu',
+            modalImage: 'image/Malinohigh.jpg',
+            modalText: 'This i'
+        },
+        {
+            title: 'Pesona Danau Matano, Keindahan Tersembunyi di Luwu Timur',
+            text: 'This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.',
+            imgSrc: 'image/danaumatanoluwutimur.jpeg',
+            lastUpdated: 'Terakhir diperbarui 2 menit lalu',
+            modalImage: 'image/Malinohigh.jpg',
+            modalText: 'This i'
+        },
+        {
+            title: 'Keindahan Pantai Dato, Destinasi Eksotis bagi para wisatawan di Majene',
+            text: 'This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.',
+            imgSrc: 'image/pantaidato-majene.jpg',
+            lastUpdated: 'Terakhir diperbarui 2 menit lalu',
+            modalImage: 'image/Malinohigh.jpg',
+            modalText: 'This i'
+        },
+        {
+            title: 'Rammang-Rammang, Destinasi Karst Terbaik di Maros',
+            text: 'This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.',
+            imgSrc: 'image/ramangmaros.jpeg',
+            lastUpdated: 'Terakhir diperbarui 2 menit lalu',
+            modalImage: 'image/Malinohigh.jpg',
+            modalText: 'This i'
+        },
+        {
+            title: 'Mengeksplorasi Taman Purbakala Sumpang Bita, di Pangkep',
+            text: 'This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.',
+            imgSrc: 'image/tamanpurbakalapangkep.png',
+            lastUpdated: 'Terakhir diperbarui 2 menit lalu',
+            modalImage: 'image/Malinohigh.jpg',
+            modalText: 'This i'
+        },
+        {
+            title: 'Menikmati Pesona Air Terjun hits, Karawa di Pinrang',
+            text: 'This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.',
+            imgSrc: 'image/airterjunkarawapinrang.webp',
+            lastUpdated: 'Terakhir diperbarui 2 menit lalu',
+            modalImage: 'image/Malinohigh.jpg',
+            modalText: 'This i'
+        },
+        {
+            title: 'Kincir Angin Raksasa, tempat yang menjadi Ikon Utama di Sidrap',
+            text: 'This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.',
+            imgSrc: 'image/kincirsidrap.jpg',
+            lastUpdated: 'Terakhir diperbarui 2 menit lalu',
+            modalImage: 'image/Malinohigh.jpg',
+            modalText: 'This i'
+        },
+        {
+            title: 'Keindahan Alam yang memukau Pulau Sembilan di Sinjai',
+            text: 'This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.',
+            imgSrc: 'image/pulausembilan.jpg',
+            lastUpdated: 'Terakhir diperbarui 2 menit lalu',
+            modalImage: 'image/Malinohigh.jpg',
+            modalText: 'This i'
+        },
+        {
+            title: 'Relaksasi di Pemandian Alam air panas, Lejja, di Soppeng',
+            text: 'This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.',
+            imgSrc: 'image/pemandianlejja (1).jpeg',
+            lastUpdated: 'Terakhir diperbarui 2 menit lalu',
+            modalImage: 'image/Malinohigh.jpg',
+            modalText: 'This i'
+        },
+        {
+            title: 'Eksplorasi Ikon <br> Budaya Londa, di Tana Toraja',
+            text: 'This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.',
+            imgSrc: 'image/torajabangun.webp',
+            lastUpdated: 'Terakhir diperbarui 2 menit lalu',
+            modalImage: 'image/Malinohigh.jpg',
+            modalText: 'This i'
+        },
+        {
+            title: 'Petualangan Seru di Danau Tempe, Kabupaten Wajo',
+            text: 'This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.',
+            imgSrc: 'image/danautempewajo.jpg',
+            lastUpdated: 'Terakhir diperbarui 2 menit lalu',
+            modalImage: 'image/Malinohigh.jpg',
+            modalText: 'This i'
+        },
+
+    ];
+
+    function createCard(card, index) {
+        return `
+            <div class="col-md-4 mb-3 bodyal">
+                <div class="card teshov" style="max-width: 540px; background-color: rgba(255, 255, 255, 0.673);" data-index="${index}">
+                    <div class="row g-0">
+                        <div class="col-md-4 ">
+                            <img src="${card.imgSrc}" class="img-fluid rounded-start imgku card-img-top"  alt="...">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h5 class="card-title">${card.title}</h5>
+                                <p class="card-text"><small class="text-body-secondary">${card.lastUpdated}</small></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        `;
+    }
+
+    const cardsPerPage = 3; // Number of cards to display per load more click
+let currentPage = 0; // Current page index
+
+function createCard(card, index) {
+    return `
+        <div class="col-md-4 mb-3 bodyal">
+            <div class="card teshov" style="max-width: 540px; background-color: rgba(255, 255, 255, 0.673);" data-index="${index}">
+                <div class="row g-0">
+                    <div class="col-md-4">
+                        <img src="${card.imgSrc}" class="img-fluid rounded-start imgku card-img-top" alt="...">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h5 class="card-title">${card.title}</h5>
+                            <p class="card-text"><small class="text-body-secondary">${card.lastUpdated}</small></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    `;
+}
+
+function renderCards() {
+    const cardContainer = document.getElementById('card-container');
+    let rowContent = '';
+
+    const startIndex = currentPage * cardsPerPage;
+    const endIndex = startIndex + cardsPerPage;
+    const cardsToRender = cards.slice(startIndex, endIndex);
+
+    cardsToRender.forEach((card, index) => {
+        rowContent += createCard(card, startIndex + index);
+    });
+
+    const rowDiv = document.createElement('div');
+    rowDiv.classList.add('row', 'align-items-center');
+    rowDiv.innerHTML = rowContent;
+    cardContainer.appendChild(rowDiv);
+
+    if (endIndex >= cards.length) {
+        document.getElementById('loadMoreBtn').style.display = 'none'; // Hide load more button if all cards are loaded
+    }
+
+    // Add event listeners to the new cards
+    document.querySelectorAll('.card').forEach(card => {
+        card.addEventListener('click', () => {
+            const index = card.getAttribute('data-index');
+            showModal(index);
+        });
+    });
+}
+
+function showModal(index) {
+    const modal = document.getElementById('myModals');
+    const modalImage = document.getElementById('modal-image');
+    const modalText = document.getElementById('modal-text');
+
+    modalImage.style.backgroundImage = `url(${cards[index].modalImage})`;
+    modalText.innerText = cards[index].modalText;
+
+    modal.style.display = 'block';
+}
+
+function closeModal() {
+    const modal = document.getElementById('myModals');
+    modal.style.display = 'none';
+}
+
+document.addEventListener('DOMContentLoaded', (event) => {
+    renderCards();
+
+    document.querySelector('.close').addEventListener('click', closeModal);
+
+    window.addEventListener('click', (event) => {
+        const modal = document.getElementById('myModals');
+        if (event.target === modal) {
+            closeModal();
+        }
+    });
+
+    document.getElementById('loadMoreBtn').addEventListener('click', () => {
+        currentPage++;
+        renderCards();
+    });
+});
+
+    
+  </script>
+
+<footer class="site-footer" style="margin-top: 35px;">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12 col-md-6">
+        <h6>About</h6>
+        <p class="text-justify">Sutra.com <i>adalah website dengan program AI </i> yang dimana dapat membantu para wisatawan internasional maupun lokal untuk mendapatkan informasi terkait lokasi, perkiraan biaya, dan deskripsi singkat pada tempat tersebut. Dimana Pengguna hanya perlu memilih kategori perencanaan, dan dari kategori tersebut akan di program melalui AI untuk perencanaannya</p>
+      </div>
+
+      <div class="col-xs-6 col-md-3">
+        <h6>Menu Link</h6>
+        <ul class="footer-links">
+          <li><a class="af"href="">Blog</a></li>
+          <li><a class="af"href="">Plan</a></li>
+          <li><a class="af"href="">Your Trip</a></li>
+          <li><a class="af"href="">Feedback</a></li>
+        </ul>
+      </div>
+
+      <div class="col-xs-6 col-md-3">
+        <h6>Progress</h6>
+        <ul class="footer-links">
+          <li class="lif"><a class="af"href="">Figma</a></li>
+          <li class="lif"><a class="af"href="">Miro</a></li>
+          <li class="lif"><a class="af"href="">Road Map</a></li>
+        </ul>
+      </div>
+    </div>
+    <hr>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 col-sm-6 col-xs-12">
+        <p class="copyright-text">Copyright &copy; 2024 All Rights Reserved by 
+     <a href="#">Sutra</a>.
+        </p>
+      </div>
+
+      <div class="col-md-4 col-sm-6 col-xs-12">
+        <ul class="social-icons">
+          <li class="lif"><img src="image/basil_facebook-outline.svg" alt=""></li>
+          <li class="lif"><img src="image/flowbite_instagram-solid.svg" alt=""></li>
+          <li class="lif"><img src="image/prime_twitter.svg" alt=""></li>
+          <li class="lif"><img src="image/ri_linkedin-fill.svg" alt=""></li>   
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+
+
+
+
+
+</body>
+
+</html>

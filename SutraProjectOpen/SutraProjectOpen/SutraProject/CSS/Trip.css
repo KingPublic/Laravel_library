@@ -1,0 +1,59 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.days-selector {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+}
+
+button {
+    width: 30px;
+    height: 30px;
+    border: 1px solid #ccc;
+    border-radius: 50%;
+    background-color: #f0f0f0;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:active {
+    background-color: #d0d0d0;
+}
+
+#days {
+    font-size: 18px;
+}
+
+@media (min-width: 990px) {
+    #navbarSupportedContent{
+        display: flex;
+        justify-content: center;
+        
+    }
+    #fontawal{
+        width: 20%;
+        height: 20%;
+    }
+
+    
+}
+
+@media (min-width: 1500px){
+    #kartu{
+        align-items: center;
+        
+    }
+}
+
+@media (max-width: 991px){
+    .navbar-nav {
+        position: static;
+    }
+}

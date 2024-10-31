@@ -1,0 +1,734 @@
+<html lang="en">
+
+
+<head>
+  <!-- permasalahan navbar di style.css dan internal jgn diubah -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trip</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="CSS/style.css">
+  <link rel="stylesheet" href="CSS/footer.css">
+
+
+  <style>
+    /* untuk animation reload */
+    body {
+      animation: transationIn 0.8s;
+      background: white !important;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      margin: 0;
+
+    }
+
+
+    .uln {
+      margin: 0px
+    }
+
+    /* untuk atur underline link */
+    .an:after {
+      background: none repeat scroll 0 0 transparent;
+      bottom: 0;
+      content: "";
+      display: block;
+      height: 2px;
+      left: 50%;
+      position: absolute;
+      background: rgba(0, 0, 0, 0.880);
+      transition: width 0.3s ease 0s, left 0.3s ease 0s;
+      width: 0;
+
+    }
+
+    .an:hover:after {
+      width: 85%;
+      left: 0;
+      margin-left: 7px;
+    }
+
+    /* untuk sign in */
+
+    .tesres {
+
+      padding: 11px;
+
+    }
+
+
+
+    @keyframes transationIn {
+      from {
+        opacity: 0;
+        transform: translateY(-10px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+
+
+    .nin {
+      background-color: white !important;
+    }
+
+    @media only screen and (max-width: 992px) {
+      .navbar-nav {
+        position: static !important ;
+        display: flex !important;
+        justify-content: left !important;
+      }
+
+      .form-control{
+        margin-left: 0% !important;
+        margin-right: 0% !important;
+      }
+
+      p {
+        text-align: center;
+      }
+
+      h4{
+        text-align: center;
+      }
+      
+    }
+
+    @media only screen and (max-width : 435px){
+      .head img{
+        width: 12%;
+        height: 6%;
+      }
+
+    }
+
+    @media only screen and (min-width: 992px) {
+      .navbar-nav {
+        position: absolute !important;
+      }
+    }
+
+    /* untuk tanggal cssnnya */
+
+    .dates {
+
+      box-shadow: 0 0px 10px rgba(0, 0, 0, 0.1);
+
+
+    }
+
+    @media only screen and (max-width: 502px) {
+      .dates {
+        margin-left: 12%;
+      }
+    }
+
+    /* untuk destinasi cssnya */
+    .formsk {
+      box-shadow: 0 0px 10px rgba(0, 0, 0, 0.1);
+      width: 100%;
+    }
+
+
+    @media only screen and (max-width: 502px) {
+
+      .formsk {
+        margin-left: 12%;
+      }
+
+    }
+
+    /* untuk incrementku cssnya */
+
+    .wrapper {
+      height: 80px;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 0px 10px rgba(0, 0, 0, 0.1);
+
+    }
+
+    .wrapper span {
+      width: 100%;
+      text-align: center;
+      font-size: 25px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    .wrapper span.num {
+      font-size: 20px;
+      border-right: 2px solid rgba(0, 0, 0, 0, 2);
+      border-left: 2px solid rgba(0, 0, 0, 0, 2);
+      pointer-events: none;
+    }
+
+    @media only screen and (max-width: 502px) {
+      .wrapper {
+        display: inline-flex;
+
+      }
+
+      .wrapTest {
+        width: 100%;
+        text-align: center;
+        position: relative;
+      }
+
+    }
+
+
+    /* untuk person css */
+
+    /* .imgperson{
+      max-width: max-content;
+      
+      
+    } */
+
+    /* untuk activities css */
+    .activities {}
+
+
+
+    /* untuk budget cssnya */
+
+    .container {
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      width: 75%;
+      float: left;
+
+    }
+
+    .container h2 {
+      margin-bottom: 10px;
+    }
+
+    .container p {
+      margin-bottom: 20px;
+      color: #777;
+    }
+
+    .budget-options {
+      display: flex;
+      gap: 20px;
+    }
+
+    .budget-option {
+      background: #fff;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      padding: 20px;
+      text-align: center;
+      cursor: pointer;
+      flex: 1;
+      transition: border-color 0.3s;
+    }
+
+    .budget-option:hover {
+      border-color: #121212;
+    }
+
+    .budget-option.selected {
+      border-color: #000000;
+      background-color: rgba(65, 60, 60, 0.233);
+    }
+
+    .budget-option img {
+      max-width: 50px;
+      margin-bottom: 10px;
+    }
+
+    .budget-option h3 {
+      margin-bottom: 5px;
+      font-size: 18px;
+    }
+
+    .budget-option p {
+      margin: 0;
+      color: #333;
+    }
+
+    .budget-options:hover {
+      border-color: #121212;
+    }
+
+    .budget-options.selected {
+      border-color: #000000;
+      background-color: rgba(65, 60, 60, 0.233);
+    }
+
+    @media only screen and (max-width: 502px) {
+      .container {
+        justify-content: center;
+        float: none;
+      }
+
+      .budget-options {
+        display: grid;
+        padding-left: 10%;
+
+      }
+
+      .budget-option {
+        width: 90%;
+        height: 200px;
+      }
+
+      .autocomplete-items {
+        margin-left: 15%;
+      }
+
+
+    }
+
+    .autocomplete-items {
+    position: absolute;
+    top: 68%; /* Posisi tepat di bawah input */
+    left: 0;
+    right: 0;
+    border: 1px ;
+    border-top: none;
+    z-index: 99;
+    background-color: white;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+    overflow-y: auto;
+    max-height: 150px; /* Batasi tinggi maksimum untuk scroll */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    justify-content: center;
+    margin-left: 420px;
+    margin-right: 420px;
+  }
+
+  .autocomplete-items div {
+    padding: 10px;
+    cursor: pointer;
+    background-color: #fff;
+  }
+
+  .autocomplete-items div:hover {
+    background-color: #e9e9e9;
+  }
+
+    .as {
+      margin-top: 2%;
+
+    }
+
+    .head img {
+      width: 6%;
+      height: 3%;
+    }
+
+    .botcontainer {
+      background: rgba(255, 255, 255, 0.300);
+      padding: 20px;
+      border-radius: 8px;
+
+      width: 100%;
+      float: right;
+      display: flex;
+      justify-content: center;
+    }
+
+    .buttonpad {
+      /* padding-right:90px ;
+          padding-left:90px ; */
+      padding: 10px 80px;
+      text-align: center;
+    }
+
+    .respon {}
+
+    @media only screen and (max-width: 502px) {
+      .head img {
+        width: 13%;
+        height: 9%;
+      }
+
+      .head img {
+        width: 13%;
+        height: 9%;
+      }
+
+      .head {
+        width: 100%;
+      }
+
+      .uln {
+        width: 100%;
+        text-align: center;
+      }
+
+      .lin {
+        display: table-cell;
+        position: relative;
+        padding: 15px;
+      }
+
+    }
+
+    .boldlink:hover {
+      font-weight: bolder;
+    }
+
+    .fixdiv {
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+
+    }
+  </style>
+
+  <head>
+
+  <body style="">
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+      integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous">
+      </script>
+
+    <nav class="navbar navbar-expand-lg bg-body-tertiary nin"
+      style="box-shadow: 0 0 10px rgba(32, 30, 30, 0.1); border-bottom: 1px solid rgb(183, 183, 183); ">
+      <div class="container-fluid head" style="margin-left: 2%;">
+        <img src="image/sutra 1.svg" alt="">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent" style="padding-top: 10px;">
+          <ul class="navbar-nav mb-2 uln" style="position: absolute; right: 0.1%;">
+            <li class="nav-item as lin">
+              <a class="nav-link boldlink an" href="Blog.html" style="color: black ; letter-spacing: 2px; ">Blog</a>
+            </li>
+            <li class="nav-item as lin">
+              <a class="nav-link boldlink an" href="Trip.html"
+                style="color: black ;letter-spacing: 2px; font-weight: bolder">Plan</a>
+            </li>
+            <li class="nav-item as lin">
+              <a class="nav-link boldlink an" href="#" style="color: black ;letter-spacing: 2px;">Your Trip</a>
+            </li>
+            <li class="nav-item as lin">
+              <a class="nav-link boldlink an" href="Feedback.html"
+                style="color: black ;letter-spacing: 2px;">Feedback</a>
+            </li>
+            <li class="lin">
+              <div style="padding-top: 1px; margin-left: 10px;">
+                <button class="" id="loginBtn" style="background-color: black; color: white;" type="sign"><a
+                    class="tesres an" style="text-decoration: none; color: white;" rel="stylesheet"
+                    href="Login.html">Sign Up</a></button>
+              </div>
+        </div>
+        </li>
+        </ul>
+      </div>
+      </div>
+    </nav>
+
+
+  
+    <form action=""></form>
+    <div style="font-family: Tahoma;" class="mt-5 fixdiv">
+      <h1>Beritahu tentang rencana anda hari ini</h1>
+      <p style="color: gray;">Cukup bagikan beberapa detail dasar, dan perencana perjalanan kami akan membuat
+        rencana </p>
+      <p style="color: gray;">perjalanan pribadi yang disesuaikan dengan preferensi Anda.</p>
+
+      <hr style="height: 2%; margin-top: 50px; margin-bottom: 30px; ">
+
+     
+      <div class="mt-5 mb-5 forms" id="formDest">
+        <label for="exampleDataList" class="form-label">
+          <h4>Destinasi</h4>
+        </label>
+      
+        <input class="form-control formsk" type="text" placeholder="Destinasi anda" list="datalist"
+          onkeyup="ac(this.value)" id="destinasi" required>
+      
+        <div id="datalist" class="autocomplete-items"></div>
+      
+        <script type="text/javascript">
+          let tags = [
+            "Makassar",
+            "Parepare",
+            "Palopo",
+            "Sengkang",
+            "Bantaeng",
+            "Bulukumba",
+            "Sinjai",
+            "Maros",
+            "Pangkep",
+            "Bone",
+            "Gowa",
+            "Jeneponto",
+            "Takalar",
+            "Sidrap",
+            "Luwu Timur",
+            "Luwu Utara",
+            "Pinrang",
+            "Barru",
+            "Enrekang",
+            "Toraja",
+            "Selayar",
+          ];
+      
+          function ac(value) {
+            // Get the datalist element and clear it
+            let datalist = document.getElementById('datalist');
+            datalist.innerHTML = '';
+      
+            // Exit if the input is empty
+            if (!value) return;
+      
+            // Loop through tags and create suggestions
+            tags.forEach(tag => {
+              if (tag.toLowerCase().includes(value.toLowerCase())) {
+                let item = document.createElement('div');
+                item.className = 'autocomplete-item';
+                item.textContent = tag;
+      
+                // Set the input value when a suggestion is clicked
+                item.addEventListener('click', () => {
+                  document.getElementById('destinasi').value = tag;
+                  datalist.innerHTML = '';
+                });
+      
+                // Append the item to the datalist
+                datalist.appendChild(item);
+              }
+            });
+          }
+        </script>
+        </div>
+
+
+
+        <div class="mt-3">
+          <label for="datePicker" class="form-label">
+            <h4>Kapan Ingin Pergi?</h4>
+          </label>
+          <input type="date" id="datePicker" class="form-control dates" min="" style="width: 100%;" required>
+          <script>
+            document.getElementById('datePicker').min = new Date().toISOString().split('T')[0];
+          </script>
+        </div>
+
+        <label for="daysPicker" class="form-label " style="margin-top: 10%;">
+          <h4>Berapa hari anda ingin pergi?</h4>
+        </label>
+        <figure class="wrapTest">
+          <div class="wrapper">
+            <span class="minus">-</span>
+            <span class="num">01</span>
+            <span class="plus">+</span>
+          </div>
+        </figure>
+    </div>
+
+    <script>
+      // Set minimum date for departure date
+      const datePicker = document.getElementById('datePicker');
+      datePicker.min = new Date().toISOString().split('T')[0];
+
+      // Increment and decrement functionality
+      const plus = document.querySelector(".plus"),
+        minus = document.querySelector(".minus"),
+        num = document.querySelector(".num");
+
+      let a = 1;
+      plus.addEventListener("click", () => {
+        if (a < 7) {  // Limit to 7 days
+          a++;
+          a = (a < 10) ? "0" + a : a;
+          num.innerText = a;
+          console.log(a);
+        }
+      });
+
+      minus.addEventListener("click", () => {
+        if (a > 1) {
+          a--;
+          a = (a < 10) ? "0" + a : a;
+          num.innerText = a;
+          console.log(a);
+        }
+      });
+
+      // Function to update min date for return date
+      function updateReturnDate() {
+        const departureDate = new Date(datePicker.value);
+        if (departureDate) {
+          const returnMinDate = new Date(departureDate);
+          returnMinDate.setDate(departureDate.getDate() + parseInt(num.innerText));
+          datePicker.max = new Date(returnMinDate).toISOString().split('T')[0];
+        }
+      }
+
+      // Event listeners
+      datePicker.addEventListener('change', updateReturnDate);
+      plus.addEventListener('click', updateReturnDate);
+      minus.addEventListener('click', updateReturnDate);
+    </script>
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+
+
+    <hr style="height: 2%;  ; margin-top: 30px; margin-bottom: 30px; width: 75%;">
+    <h4>Berapa Anggaran Anda?</h4>
+    <p style="color: gray;"> Anggaran dialokasikan secara eksklusif untuk kegiatan dan keperluan makan.</p>
+    <div class="container" style="background-color: rgba(255, 255, 255, 0.673) ;">
+
+      <div class="budget-options">
+        <div class="budget-option option-anggaran" onclick="selectBudget('low')">
+          <img src="image/grommet-icons_money.svg" alt="Low Budget Icon">
+          <h3>Mode Backpacker</h3>
+          <p>500K - 1.500K </p>
+        </div>
+        <div class="budget-option option-anggaran" onclick="selectBudget('medium')">
+          <img src="image/grommet-icons_money.svg" alt="Medium Budget Icon">
+          <h3>Mode Santai</h3>
+          <p>1.500K - 3.500K</p>
+        </div>
+        <div class="budget-option option-anggaran" onclick="selectBudget('high')">
+          <img src="image/grommet-icons_money.svg" alt="High Budget Icon">
+          <h3>Mode Sultan</h3>
+          <p>3.500K++</p>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      function selectBudget(budget) {
+        // Remove 'selected' class from all options
+        document.querySelectorAll('.option-anggaran').forEach(option => {
+          option.classList.remove('selected');
+        });
+
+        // Add 'selected' class to the clicked option
+        const selectedOption = document.querySelector(`.option-anggaran[onclick="selectBudget('${budget}')"]`);
+        selectedOption.classList.add('selected');
+      }
+    </script>
+
+    <hr style="height: 2%;  ; margin-top: 30px; margin-bottom: 30px;">
+
+    <h4>Dengan berapa orang Anda berencana berpergian?</h4>
+    <p style="color: gray;"> Mengetahui jumlah orang yang pergi agar kami dapat memaksimalkan budget Anda.</p>
+    <div class="container" style="background-color: rgba(255, 255, 255, 0.673) ;">
+      <div class="budget-options persons">
+        <div class="budget-option person" onclick="selectperson('solo')">
+          <img src="image/hiking.png" alt="solo" >
+          <h3>Solo</h3>
+        </div>
+        <div class="budget-option person " onclick="selectperson('couple')">
+          <img src="image/tourists.png" alt="couple">
+          <h3>Couple</h3>
+        </div>
+        <div class="budget-option person" onclick="selectperson('family')">
+          <img src="image/travel (1).png" alt="family">
+          <h3>Family</h3>
+        </div>
+        <div class="budget-option person" onclick="selectperson('friends')">
+          <img src="image/friends.png" alt="friends">
+          <h3>Friends</h3>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      function selectperson(person) {
+
+        // Remove 'selected' class from all options
+        document.querySelectorAll('.person').forEach(option => {
+          option.classList.remove('selected');
+        });
+
+        // Add 'selected' class to the clicked option
+        const selectedOption = document.querySelector(`.person[onclick="selectperson('${person}')"]`);
+        selectedOption.classList.add('selected');
+      }
+    </script>
+
+    <hr style="height: 2%;  ; ;margin-top: 30px; margin-bottom: 30px; ">
+
+    <h4>Kegiatan apa yang Anda minati?</h4>
+    <p style="color: gray;">Mengetahui hal yang Anda minati juga dapat membuat kita memberikan hasil yang maksimal.</p>
+    <div class="container" style="background-color: rgba(255, 255, 255, 0.673); max-height: 400px; overflow-y: scroll;">
+      <div class="budget-options activities">
+        <div class="budget-option activity-option" onclick="selectactivities('pantai')">
+          <img src="image/vacations_2664589.png" alt="Pantai">
+          <h3>Pantai</h3>
+        </div>
+        <div class="budget-option activity-option" onclick="selectactivities('kota')">
+          <img src="image/cityscape_2451548.png" alt="Kota">
+          <h3>Kota</h3>
+        </div>
+        <div class="budget-option activity-option" onclick="selectactivities('petualangan')">
+          <img src="image/hiking_5987640.png" alt="Petualangan">
+          <h3>Jelajah</h3>
+        </div>
+        <div class="budget-option activity-option" onclick="selectactivities('festival')">
+          <img src="image/celebration_3798287.png" alt="Festival">
+          <h3>Festival</h3>
+        </div>
+        <div class="budget-option activity-option" onclick="selectactivities('belanja')">
+          <img src="image/shop_7461083.png" alt="Belanja">
+          <h3>Belanja</h3>
+        </div>
+      </div>
+    </div>
+
+    <hr style="height: 2%; margin-top: 30px; margin-bottom: 30px;">
+
+    <div class="botcontainer">
+      <button type="button" class="btn btn-outline-dark buttonpad" onclick="validate()">Submit</button>
+    </div>
+
+    
+    <script>
+      function selectactivities(activities) {
+          const selectedOption = document.querySelector(`.activity-option[onclick="selectactivities('${activities}')"]`);
+          if (selectedOption.classList.contains('selected')) {
+              selectedOption.classList.remove('selected');
+          } else {
+              selectedOption.classList.add('selected');
+          }
+      }
+
+    
+    </script>
+
+    <script src="JS/Trip.js"></script>
+
+
+
+
+
+
+
+
+
+
+  
+    
+  </body>
+
+
+</html>
